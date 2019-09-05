@@ -21,12 +21,12 @@ Sample output:
 
 | Parameter | Description |
 |--|--|
---separator=SEPERATOR / -s SEPERATOR | Set the seperator between symbol and count (default: " :: ")
---number=NUMBER / -n NUMBER  | Display only top NUMBER entries (default: all)
---no-clear / -c | Disable screen clear
---reverse / -r  | Short ascending
---percent / -p | Show frequency as percentage
---draw / -d | Draw bar for visualization
---interval=SECONDS / -i SECONDS | Refresh interval (default: 0)
---switch / -x | Show count first, then value
---help / -h | Show the help
+|--separator=SEPERATOR / -s SEPERATOR | Set the seperator between symbol and count (default: " :: ")      |
+|--number=NUMBER / -n NUMBER  | Display only top NUMBER entries (default: all)                            |
+|--no-clear / -c | Disable screen clear                                                                   |
+|--reverse / -r  | Short ascending                                                                        |
+|--percent / -p | Show frequency as percentage                                                            |
+|--draw / -d | Draw bar for visualization                                                                 |
+|--interval=SECONDS / -i SECONDS | Refresh interval (default: 0)                                          |
+|--switch / -x | Show count first, then value                                                             |
+|--help / -h | Show the help                                                                              |
