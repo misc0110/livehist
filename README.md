@@ -39,3 +39,10 @@ There are no dependencies on third-party libraries. To compile, simply run
 
     make
 
+## Install
+
+After building, simply run
+
+    sudo make install
+
+The binary (`livehist`) is installed to `/usr/bin/livehist`. Run `sudo make uninstall` to remove the application.

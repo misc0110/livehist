@@ -12,7 +12,7 @@ cli_parser.o: cli_parser.cpp
 clean:
 	rm -f livehist *.o
 	
-install:
+install: livehist
 	cp livehist /usr/bin/
 
 uninstall:
