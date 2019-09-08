@@ -32,3 +32,10 @@ Sample output:
 | --help / -h | Show the help                                                                              |
 | --outfile=FILE / -o FILE | Output latest histogram to file FILE.                                         |
 | --atomic / -a | On Ctrl+C, application finishes printing the histogram.                                  |
+
+## Compile
+
+There are no dependencies on third-party libraries. To compile, simply run
+
+    make
+
