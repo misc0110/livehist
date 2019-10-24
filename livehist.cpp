@@ -3,7 +3,7 @@
 #include <map>
 #include <set>
 #include <functional>
-#include <algorithm> 
+#include <algorithm>
 #include <cctype>
 #include <locale>
 #include <vector>
@@ -138,12 +138,12 @@ static void draw(Options& options, int output, FILE* out, std::vector<std::pair<
             len += snprintf(buffer, sizeof(buffer), "%s%s", element.first.c_str(), options.seperator.c_str());
             if(options.percent) len += snprintf(tmp, sizeof(tmp), "%f", element.second * 100.0 / sum);
             else len += snprintf(tmp, sizeof(tmp), "%zd", element.second);
-            strncat(buffer, tmp, sizeof(buffer));
+            strncat(buffer, tmp, sizeof(buffer) - 1);
         } else {
             if(options.percent) len += snprintf(buffer, sizeof(buffer), "%f", element.second * 100.0 / sum);
             else len += snprintf(buffer, sizeof(buffer), "%zd", element.second);
             len += snprintf(tmp, sizeof(tmp), "%s%s", options.seperator.c_str(), element.first.c_str());
-            strncat(buffer, tmp, sizeof(buffer));
+            strncat(buffer, tmp, sizeof(buffer) - 1);
         }
         if(len > maxlen) maxlen = len;
         if(output) {
