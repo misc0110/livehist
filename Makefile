@@ -1,13 +1,15 @@
+VERSION := $(shell cat VERSION)
+
 all: livehist
 
 livehist: livehist.o cli_parser.o
 	g++ livehist.o cli_parser.o -o livehist
 
 livehist.o: livehist.cpp
-	g++ livehist.cpp -O3 -Wall -c
+	g++ livehist.cpp -O3 -Wall -DAPPVERSION='"$(VERSION)"' -c
 	
 cli_parser.o: cli_parser.cpp
-	g++ cli_parser.cpp -O3 -Wall -c
+	g++ cli_parser.cpp -O3 -Wall -DAPPVERSION='"$(VERSION)"' -c
 
 clean:
 	rm -f livehist *.o

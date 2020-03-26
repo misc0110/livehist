@@ -54,7 +54,7 @@ void show_usage(char *binary, getopt_arg_t* cli_options) {
     printf("\n");
     printf("EXAMPLE\n  cat file | %s.\n\n\n", binary);
     printf("AUTHORS\n  Written by Michael Schwarz.\n\n");
-
+    printf("VERSION\n  %s\n\n", APPVERSION);
 }
 
 
@@ -62,7 +62,7 @@ void show_usage(char *binary, getopt_arg_t* cli_options) {
 int parse_cli_options(Options& options, getopt_arg_t* cli_options, int argc, char* argv[]) {
     struct option *long_options = getopt_get_long_options((getopt_arg_t *) cli_options);
     int c;
-    while ((c = getopt_long(argc, argv, ":s:o:chrn:xpdi:a", long_options, NULL)) != EOF) {
+    while ((c = getopt_long(argc, argv, ":s:o:chrn:xpdi:av", long_options, NULL)) != EOF) {
         switch (c) {
             case 's':
                 options.seperator = std::string(optarg);
@@ -96,6 +96,9 @@ int parse_cli_options(Options& options, getopt_arg_t* cli_options, int argc, cha
                 break;
             case 'a':
                 options.atomic = 1;
+                break;
+            case 'v':
+                options.version = 1;
                 break;
             case ':':
                 printf("Option -%c requires an argument.\n",

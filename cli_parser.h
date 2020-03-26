@@ -18,7 +18,7 @@ typedef struct {
 // ---------------------------------------------------------------------------
 typedef struct {
     std::string seperator = " :: ";
-    int clear = 1, reverse = 0, order = 0, percent = 0, draw = 0, atomic = 0;
+    int clear = 1, reverse = 0, order = 0, percent = 0, draw = 0, atomic = 0, version = 0;
     float interval = 0;
     size_t number = 0;
     char* outfile = NULL;

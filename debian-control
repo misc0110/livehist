@@ -1,0 +1,9 @@
+Package: livehist
+Version: %VERSION%
+Section: devel
+Priority: optional
+Architecture: amd64
+Depends: libstdc++6, libc6
+Maintainer: Michael Schwarz <michael.schwarz91@gmail.com>
+Description: Real-time histogram for data streams
+ A command line tool to show a real-time histogram of a data stream.

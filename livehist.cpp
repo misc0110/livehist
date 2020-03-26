@@ -27,6 +27,7 @@ static getopt_arg_t cli_options[] =
                 {"switch",    no_argument,       NULL, 'x', "Show count first, then value.", NULL},
                 {"outfile",   required_argument, NULL, 'o', "Output latest histogram to file FILE.", "FILE"},
                 {"atomic",    no_argument,       NULL, 'a', "On Ctrl+C, application finishes printing the histogram.", NULL},
+                {"version",   no_argument,       NULL, 'v', "Show version and exit.", NULL},
                 {"help",      no_argument,       NULL, 'h', "Show this help.",       NULL},
                 {NULL, 0,                        NULL, 0, NULL,                      NULL}
         };
@@ -196,9 +197,13 @@ int main(int argc, char* argv[]) {
     std::map<std::string, size_t> hist;
     std::vector<std::pair<std::string, size_t>> pairs;
 
-
     if(parse_cli_options(options, cli_options, argc, argv)) {
         return 1;
+    }
+    
+    if(options.version) {
+        printf("Live Histogram %s\n\nWritten by Michael Schwarz\n", APPVERSION);
+        return 0;
     }
 
     for (std::string line; getline(std::cin, line);) {
