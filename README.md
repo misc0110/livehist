@@ -33,6 +33,19 @@ Sample output:
 | --outfile=FILE / -o FILE | Output latest histogram to file FILE.                                         |
 | --atomic / -a | On Ctrl+C, application finishes printing the histogram.                                  |
 
+## Install using PPA (recommended)
+
+First, add the public key of the PPA and the PPA URL to the package manager, and update the package manager
+
+    curl -s "https://misc0110.github.io/ppa/KEY.gpg" | sudo apt-key add -
+    sudo curl -s -o /etc/apt/sources.list.d/misc0110.list "https://misc0110.github.io/ppa/file.list"
+    sudo apt update
+
+Then, simply install LiveTikZ
+
+    sudo apt install livehist
+
+
 ## Compile
 
 There are no dependencies on third-party libraries. To compile, simply run
