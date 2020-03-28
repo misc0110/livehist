@@ -126,7 +126,7 @@ static void clear_screen(int vt100) {
 
 // ---------------------------------------------------------------------------
 static void draw(Options& options, int output, FILE* out, std::vector<std::pair<std::string, size_t>>& pairs, size_t sum) {
-    char buffer[256], tmp[256];
+    char buffer[257], tmp[256];
     size_t maxlen = 0;
     size_t limit = options.number;
     for (std::pair<std::string, size_t> element : pairs) {
