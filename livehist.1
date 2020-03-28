@@ -1,0 +1,69 @@
+.TH LIVEHIST 1
+.SH NAME
+livehist \- A real-time histogram for data streams
+.SH SYNOPSIS
+.B livehist\fR [\fIoptions\fR]
+.SH DESCRIPTION
+.B livehist\fR displays a real-time histogram of the data stream piped into the tool.  
+Symbols are separated by newlines, i.e., every line is seen as one symbol in the histogram.
+After every read symbol, the histogram is updated.
+The output can either be as relative or absolute number, or more graphical using percentage bars. 
+
+With the \fI\-a\fR option, \fBlivehist\fR can also ensure that the histogram output is not interrupted when aborting the application. 
+As it reduces the update rate, atomic output is not enabled by default. 
+.SH OPTIONS
+.TP
+\fB\-n\fR \fInum\fR, \fB\-\-number\fR=\fInum\fR
+Display only the top \fInum\fR entries of the histogram (default: all entries).
+.TP
+\fB\-i\fR \fIseconds\fR, \fB\-\-interval\fR=\fIseconds\fR
+The refresh interval in seconds. The default is 0, updating the output as fast as possible.
+.TP
+\fB\-a\fR, \fB\-\-atomic\fR
+Ensure that even on Ctrl+C, the application finishes printing the histogram before exiting.
+.TP
+\fB\-o\fR \fIname\fR, \fB\-\-out\fR=\fIname\fR
+Output latest histogram to file \fIfname\fR.
+.TP
+\fB\-p\fR, \fB\-\-percent\fR
+Show symbol frequency as percentage instead of absolute number.
+.TP
+\fB\-s\fR \fIsymbol\fR, \fB\-\-seperator\fR=\fIsymbol\fR
+Set the separator which is displayed between the symbol and count. The default symbol is "\fB :: \fR". 
+.TP
+\fB\-c\fR, \fB\-\-no\-clear\fR 
+Disable clearing of screen.
+.TP
+\fB\-r\fR, \fB\-\-reverse\fR
+Sort ascending instead of descending.
+.TP
+\fB\-x\fR, \fB\-\-switch\fR
+Show count first, then symbol.
+.TP
+\fB\-d\fR, \fB\-\-draw\fR
+Draw bar for visualization.
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Show version and exit.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Show the help and exit.
+.SH EXAMPLES
+.TP 
+cat file | livehist
+Displays a histogram where every line of the file is seen as one element
+.TP
+python3 -c 'import random; [print(random.choice("ACABACAAABAABC")) for x in range(10000)]' | livehist
+Randomly prints the letters A, B, and C using python and feeds it into \fBlivehist\fR. A sample output would be
+
+    5763 :: A |###############################################################
+    2137 :: C |#######################
+    2100 :: B |#######################
+
+
+.SH COPYRIGHT
+Copyright 2020 Michael Schwarz <michael.schwarz91@gmail.com>
+
+This is free software; see the  source  for  copying  conditions.
+There  is  NO  warranty;  not  even  for
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
