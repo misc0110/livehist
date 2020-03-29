@@ -5,10 +5,10 @@ all: livehist
 livehist: livehist.o cli_parser.o
 	g++ livehist.o cli_parser.o -o livehist
 
-livehist.o: livehist.cpp
+livehist.o: livehist.cpp VERSION
 	g++ livehist.cpp -O3 -Wall -DAPPVERSION='"$(VERSION)"' -c
 	
-cli_parser.o: cli_parser.cpp
+cli_parser.o: cli_parser.cpp VERSION
 	g++ cli_parser.cpp -O3 -Wall -DAPPVERSION='"$(VERSION)"' -c
 
 clean:
