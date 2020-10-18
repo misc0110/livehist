@@ -28,5 +28,4 @@ jobs:
           arch: arm64
 script:
     - make
-    - echo "C\nA\nB\nA\nB\nA\nC\nA\nB\nB\nC\nA\nB\nC\nD\nD\nB\nA\nC\nA" | livehist | tail -4 | head -1 | grep -c "7 :: A"
- 
+    - echo "C\nA\nB\nA\nB\nA\nC\nA\nB\nB\nC\nA\nB\nC\nD\nD\nB\nA\nC\nA" | livehist -s "," | tail -4 | head -1 | grep -c "7,A"  
