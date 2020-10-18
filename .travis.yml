@@ -28,4 +28,4 @@ jobs:
           arch: arm64
 script:
     - make
-    - echo "C\nA\nB\nA\nB\nA\nC\nA\nB\nB\nC\nA\nB\nC\nD\nD\nB\nA\nC\nA" | ./livehist -s ","  
+    - echo -ne "C\nA\nB\nA\nB\nA\nC\nA\nB\nB\nC\nA\nB\nC\nD\nD\nB\nA\nC\nA" | ./livehist -s ","  
