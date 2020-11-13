@@ -1,5 +1,5 @@
 # Live Histogram
-[![Build Status](https://travis-ci.org/misc0110/livehist.svg?branch=master)](https://travis-ci.org/misc0110/livehist)
+[![Build Status](https://travis-ci.com/misc0110/livehist.svg?branch=master)](https://travis-ci.com/misc0110/livehist)
 
 A command line tool to show a real-time histogram of a data stream.
 
